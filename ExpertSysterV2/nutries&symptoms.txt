@@ -1,0 +1,40 @@
+Vitamin D: fatigue, muscle pain, weakness, bone pain, frequent infections, depression, hair loss, impaired wound healing, bone loss, mood swings
+Vitamin B12: fatigue, weakness, shortness of breath, pale skin, tingling or numbness in hands and feet, memory problems, difficulty concentrating, mood disturbances, sore tongue, balance problems
+Iron: fatigue, weakness, pale skin, shortness of breath, brittle nails, cold hands and feet, headache, dizziness, restless legs syndrome, decreased exercise tolerance
+Magnesium: muscle cramps, muscle twitches, fatigue, weakness, irritability, poor memory, difficulty sleeping, heart palpitations, anxiety, constipation
+Vitamin C: easy bruising, slow wound healing, frequent infections, dry and splitting hair, swollen and bleeding gums, rough and dry skin, joint pain, weakened tooth enamel, fatigue
+Vitamin A: night blindness, dry eyes, dry skin, frequent infections, poor wound healing, dry and brittle hair, increased susceptibility to respiratory infections, impaired taste and smell
+Zinc: frequent infections, slow wound healing, loss of appetite, hair loss, impaired sense of taste and smell, diarrhea, mood disturbances, poor growth in children, low libido
+Omega-3 fatty acids: dry skin, brittle nails, dry and dull hair, fatigue, difficulty concentrating, joint pain, depression, frequent infections, inflammation
+Calcium: brittle bones, frequent fractures, muscle cramps, numbness and tingling in fingers and toes, weakened tooth enamel, fatigue, depression, memory problems, irregular heartbeat
+Vitamin E: muscle weakness, poor coordination, vision problems, impaired balance, poor reflexes, muscle pain, easy bruising, difficulty concentrating, nerve damage
+Vitamin K: excessive bleeding, easy bruising, heavy menstrual bleeding, blood in urine or stool, frequent nosebleeds, poor bone health, weakened immune system
+Folate: fatigue, weakness, pale skin, shortness of breath, poor concentration, irritability, tongue swelling, diarrhea, headache, impaired growth in children
+Vitamin B6: fatigue, irritability, depression, confusion, weakened immune function, dry and cracked lips, sore tongue, muscle weakness, poor memory, mood swings
+Iodine: fatigue, weight gain, dry skin, hair loss, cold intolerance, depression, impaired memory, slowed heart rate, goiter
+Vitamin B1 (Thiamine): fatigue, weakness, poor coordination, irritability, poor memory, muscle weakness, loss of appetite, confusion, tingling or numbness in hands and feet, impaired reflexes
+Vitamin B2 (Riboflavin): fatigue, weakness, sore throat, swollen tongue, cracks and sores at corners of the mouth, skin rash, sensitivity to light, eye redness and itching, impaired growth in children
+Vitamin B3 (Niacin): fatigue, weakness, headache, poor concentration, memory loss, skin rashes, digestive problems, irritability, depression, pellagra, dermatitis, diarrhea, dementia
+Vitamin B5 (Pantothenic Acid): fatigue, weakness, numbness or tingling in hands and feet, headache, irritability, difficulty sleeping, stomach pain, skin problems
+Vitamin B7 (Biotin): hair loss, brittle nails, dry skin, fatigue, muscle pain, impaired growth in children, depression, tingling or numbness in hands and feet, cramps
+Vitamin B9 (Folic Acid): fatigue, weakness, shortness of breath, poor concentration, irritability, headache, heart palpitations, pale skin, tongue swelling, diarrhea, deficient during pregnancy
+Vitamin B11 (Salicylic Acid): fatigue, poor concentration, headache, joint pain, muscle aches, skin rash, ringing in the ears, dizziness, heartburn, stomach pain
+Vitamin B13 (Orotic Acid): fatigue, poor concentration, poor memory, irritability, slow wound healing, muscle weakness, diarrhea, depression, decreased exercise tolerance
+Vitamin B15 (Pangamic Acid): fatigue, poor concentration, muscle weakness, shortness of breath, dizziness, poor coordination, slow wound healing, irritability, depression
+Vitamin B17 (Amygdalin): fatigue, poor concentration, headache, joint pain, muscle aches, skin rash, digestive problems, anxiety, depression, weakened immune system
+Vitamin B21 (Pteroylmonoglutamic Acid): fatigue, weakness, shortness of breath, poor concentration, irritability, headache, heart palpitations, pale skin, tongue swelling, diarrhea, glossitis
+Vitamin B22 (Pyridoxine): fatigue, irritability, depression, confusion, weakened immune function, dry and cracked lips, sore tongue, muscle weakness, poor memory, mood swings
+Vitamin B24 (Cyanocobalamin): fatigue, weakness, shortness of breath, pale skin, tingling or numbness in hands and feet, memory problems, difficulty concentrating, mood disturbances, sore tongue, balance problems
+Vitamin B30 (Inositol): fatigue, poor concentration, anxiety, mood swings, depression, memory problems, hair loss, skin problems, digestive issues, insomnia
+Vitamin B50 (Calcium Pantothenate): fatigue, weakness, numbness or tingling in hands and feet, irritability, difficulty sleeping, stomach pain, nausea, skin problems
+Vitamin B100 (Choline): fatigue, poor concentration, memory problems, irritability, muscle aches, liver dysfunction, nerve damage, insomnia, depression, hair loss
+Vitamin F (Essential Fatty Acids): dry and scaly skin, dry eyes, poor wound healing, brittle nails, hair loss, fatigue, poor concentration, mood swings, joint pain, inflammation
+Vitamin G (Glutathione): fatigue, weakened immune function, poor detoxification, oxidative stress, muscle weakness, joint pain, memory problems, aging skin, increased susceptibility to infections
+Vitamin H (Biotin): hair loss, brittle nails, dry skin, fatigue, muscle pain, impaired growth in children, depression, tingling or numbness in hands and feet, cramps
+Vitamin I (Bioflavonoids): easy bruising, slow wound healing, varicose veins, swollen and bleeding gums, fatigue, poor circulation, allergies, frequent infections, inflammation, impaired vision
+Vitamin J (Amino Acids): fatigue, poor concentration, muscle weakness, poor wound healing, impaired immune function, poor sleep quality, mood disturbances, slow recovery from exercise, joint pain, hair loss
+Vitamin L (Anthocyanins): poor vision in dim light, decreased night vision, macular degeneration, poor collagen formation, fatigue, poor circulation, memory problems, weakened immune system, inflammation
+Vitamin M (Folic Acid): fatigue, weakness, shortness of breath, poor concentration, irritability, headache, heart palpitations, pale skin, tongue swelling, diarrhea, hyperhomocysteinemia
+Vitamin P (Bioflavonoids): easy bruising, slow wound healing, varicose veins, swollen and bleeding gums, fatigue, poor circulation, allergies, frequent infections, inflammation, impaired vision
+Vitamin Q (Coenzyme Q10): fatigue, muscle weakness, poor exercise tolerance, poor heart health, decreased energy production, poor antioxidant defense, poor immune function, cognitive decline, aging skin
+Vitamin T (Tocopherol): fatigue, muscle weakness, poor exercise tolerance, poor wound healing, impaired immune function, poor antioxidant defense, cognitive decline, dry and aging skin, hair loss, poor vision
