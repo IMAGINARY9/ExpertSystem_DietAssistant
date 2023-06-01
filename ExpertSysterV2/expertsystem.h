@@ -24,29 +24,42 @@ public:
 
     QString getCategoryBreak() const;
 
+ public slots:
+    void init();
+    void questionsResult(QStringList &list);
+
 private:
     void mapBuild(QMap<QString, QStringList> &to, const QStringList &from);
     void listBuild(QStringList &to, const QMap<QString, QStringList> &from);
-    void listBuild(QStringList &to, const QMap<QString, QStringList> &from, const QList<QString> &categories);
+    bool listBuild(QStringList &to, const QMap<QString, QStringList> &from, const QList<QString> &categories);
     void listClearning(QStringList &patient, const QStringList &exclusions);
     void listClearningByCategory(QStringList &patient, const QList<QString> &categories);
     void mapClearning(QMap<QString, QStringList> &patient, const QStringList &exclusion);
+    void mapCategoryClearning(QMap<QString, QStringList> &patient, const QStringList &exclusion);
     void checkRepeat();
     void exclusion_of_superfluous();
     void reset_selection();
 
 signals:
+    void resetCategory();
+    void needsUpdate();
     void systemError(const QString &error);
     void systemSuccess(const QStringList &missing, const QStringList &medicines);
 
 private:
     QMap<QString, QStringList> *nutries_symptomsMap;
     QMap<QString, QStringList> *sel_nutries_symptomsMap;
+
     QMap<QString, QStringList> *nutries_productsMap;
     QMap<QString, QStringList> *categories_symptomsMap;
+    
+    QMap<QString, QStringList> *nutries_questionsMap;
+    QStringList *sel_nutries_questionsList;
+
     QStringList *symptomsList;
     QStringList *sel_symptomsList;
     QString categoryBreak = "All";
+    bool isFinished;
 };
 
 #endif // EXPERTSYSTEM_H

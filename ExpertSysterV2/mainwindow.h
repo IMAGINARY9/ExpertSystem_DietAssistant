@@ -26,6 +26,7 @@ public:
     void select_symptom();
     void remove_symptom();
     void clear_selection();
+    void clear_category();
     QString get_modelItem(const QListView &view, const QStringListModel &model);
 
 public slots:

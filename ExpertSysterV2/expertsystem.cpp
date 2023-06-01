@@ -1,4 +1,5 @@
 #include "expertsystem.h"
+#include "questionsdialog.h"
 
 QStringList Read(QString Filename, QString splitSymbol)
 {
@@ -49,39 +50,37 @@ void ExpertSystem::listBuild(QStringList &to, const QMap<QString, QStringList> &
         }
     }
 }
-void ExpertSystem::listBuild(QStringList &to, const QMap<QString, QStringList> &from, const QList<QString> &categories)
+bool ExpertSystem::listBuild(QStringList &to, const QMap<QString, QStringList> &from, const QList<QString> &categories)
 {
-    to.clear();
+    QStringList res;
+
     for (const auto &key : from.keys()) {
         for (const QString &factor : from.value(key)) {
             if (categories.contains(factor))
             {
                 bool uniq = true;
-                for (const QString &str : to) {
+                for (const QString &str : res) {
                     if (str == factor)
                         uniq = false;
                 }
 
                 if (uniq)
-                    to.push_back(factor);
+                    res.push_back(factor);
             }
         }
     }
-}
 
-void ExpertSystem::listClearningByCategory(QStringList &patient, const QList<QString> &categories)
-{
-    for (const QString &sympt : categories) {
-        bool toDelete = true;
-        for (const QString &item : patient) {
-            if(sympt == item)
-            {
-                toDelete = false;
-                break;
-            }
-        }
-
+    if (res.size() >= 1)
+    {
+        to.clear();
+        to.append(res);
+        return true;
     }
+    else{
+        emit resetCategory();
+        return false;
+    }
+
 }
 
 void ExpertSystem::listClearning(QStringList &patient, const QStringList &exclusions)
@@ -112,13 +111,26 @@ void ExpertSystem::mapClearning(QMap<QString, QStringList> &patient, const QStri
     }
 }
 
+void ExpertSystem::mapCategoryClearning(QMap<QString, QStringList> &patient, const QStringList &exclusion)
+{
+    QMap<QString, QStringList> res;
+    for (const QString &el : exclusion)
+        res.insert(el, patient.value(el));
+
+    patient.clear();
+    patient.insert(res);
+
+}
+
 void ExpertSystem::exclusion_of_superfluous()
 {
+    mapCategoryClearning(*sel_nutries_symptomsMap, *sel_nutries_questionsList);
     mapClearning(*sel_nutries_symptomsMap, *sel_symptomsList);
     listBuild(*symptomsList, *sel_nutries_symptomsMap);
     listClearning(*symptomsList, *sel_symptomsList);
+    emit needsUpdate();
 
-    if (sel_nutries_symptomsMap->size() == 1)
+    if (sel_nutries_symptomsMap->size() == 1 && !isFinished)
         finish();
 }
 
@@ -128,16 +140,27 @@ void ExpertSystem::reset_selection()
     sel_nutries_symptomsMap->insert(*nutries_symptomsMap);
 }
 
-QString ExpertSystem::getCategoryBreak() const
+void ExpertSystem::init()
 {
-    return categoryBreak;
+    clear();
+    sel_nutries_symptomsMap->insert(*nutries_symptomsMap);
+
+    isFinished = false;
+    QuestionsDialog *questions = new QuestionsDialog();
+
+    connect(questions, &QuestionsDialog::finished, questions, &QuestionsDialog::deleteLater);
+    connect(questions, &QuestionsDialog::finished, this, &ExpertSystem::questionsResult);
+
+    questions->SetQuestions(*nutries_questionsMap);
+
+    questions->setModal(true);
+    questions->show();
 }
 
 bool compareByMatches(const QString& str1, const QString& str2, const QString& input)
 {
     return str1.count(input) > str2.count(input);
 }
-
 void ExpertSystem::search(const QString &input)
 {
     if (!input.isEmpty())
@@ -155,15 +178,17 @@ void ExpertSystem::setCategory(const QString &category)
         return;
     }
 
-    listBuild(*symptomsList, *sel_nutries_symptomsMap, categories_symptomsMap->value(category));
-    listClearning(*symptomsList, *sel_symptomsList);
+    if (listBuild(*symptomsList, *sel_nutries_symptomsMap, categories_symptomsMap->value(category)))
+    {
+        listClearning(*symptomsList, *sel_symptomsList);
+    }
 }
 
 void ExpertSystem::finish()
 {
-    if (sel_symptomsList->size() <= 0)
+    if (sel_nutries_symptomsMap->keys().size() >= nutries_symptomsMap->keys().size())
     {
-        emit systemError("Select symptoms!");
+        emit systemError("Select more symptoms!");
         return;
     }
     QStringList medicines;
@@ -179,6 +204,7 @@ void ExpertSystem::finish()
                 medicines.push_back(product);
         }
     }
+    isFinished = true;
     emit systemSuccess(sel_nutries_symptomsMap->keys(), medicines);
 }
 
@@ -215,65 +241,61 @@ QList<QString> ExpertSystem::getCategories() const
 {
     return categories_symptomsMap->keys();
 }
+QString ExpertSystem::getCategoryBreak() const
+{
+    return categoryBreak;
+}
+
+void ExpertSystem::questionsResult(QStringList &list)
+{
+    sel_nutries_questionsList->clear();
+    sel_nutries_questionsList->append(list);
+    exclusion_of_superfluous();
+}
 
 ExpertSystem::ExpertSystem(QObject *parent)
     : QObject{parent}
 {
     nutries_symptomsMap = new QMap<QString, QStringList>();
     sel_nutries_symptomsMap = new QMap<QString, QStringList>();
+
     nutries_productsMap = new QMap<QString, QStringList>();
     categories_symptomsMap = new QMap<QString, QStringList>();
+
+    nutries_questionsMap = new QMap<QString, QStringList>();
+    sel_nutries_questionsList = new QStringList();
 
     symptomsList = new QStringList();
     sel_symptomsList = new QStringList();
 
     QStringList nutries_symptomsList = Read(":/database/nutries&symptoms.txt", "\n");
     QStringList nutries_productsList = Read(":/database/nutries&products.txt", "\n");
-    QStringList categoriesList = Read(":/database/categories.txt", "\n");
+    QStringList categoriesList = Read(":/database/sortCategories.txt", "\n");
+    QStringList nutries_questionsList = Read(":/database/nutries&questions.txt", "\n");
 
     mapBuild(*nutries_symptomsMap, nutries_symptomsList);
-    sel_nutries_symptomsMap->insert(*nutries_symptomsMap);
+
     mapBuild(*nutries_productsMap, nutries_productsList);
     mapBuild(*categories_symptomsMap, categoriesList);
 
-    listBuild(*symptomsList, *nutries_symptomsMap);
+    mapBuild(*nutries_questionsMap, nutries_questionsList);
 
-
-
-//    qDebug() << "\n\nsymptomsList\n";
-//    for (const auto &el : *symptomsList) {
-//        qDebug() << el;
-//    }
-
-//    qDebug() << "\n\nnutries_symptomsMap\n";
-//    for (const auto &el : *nutries_symptomsMap) {
-//        qDebug() << el;
-//    }
-
-//    qDebug() << "\n\nsel_nutries_symptomsMap\n";
-//    for (const auto &el : *sel_nutries_symptomsMap) {
-//        qDebug() << el;
-//    }
-
-//    qDebug() << "\n\nnutries_productsMap\n";
-//    for (const auto &el : *nutries_productsMap) {
-//        qDebug() << el;
-//    }
-
-//     qDebug() << "\n\ncategories_symptomsMap\n";
-//     for (const auto &el : *categories_symptomsMap) {
-//         qDebug() << el;
-//     }
-
+    init();
 }
 
 
 ExpertSystem::~ExpertSystem()
 {
+
     delete nutries_symptomsMap;
     delete sel_nutries_symptomsMap;
+
     delete nutries_productsMap;
     delete categories_symptomsMap;
+
+    delete nutries_questionsMap;
+    delete sel_nutries_questionsList;
+
     delete symptomsList;
     delete sel_symptomsList;
 }

@@ -11,14 +11,17 @@ CONFIG += c++17
 SOURCES += \
     expertsystem.cpp \
     main.cpp \
-    mainwindow.cpp
+    mainwindow.cpp \
+    questionsdialog.cpp
 
 HEADERS += \
     expertsystem.h \
-    mainwindow.h
+    mainwindow.h \
+    questionsdialog.h
 
 FORMS += \
-    mainwindow.ui
+    mainwindow.ui \
+    questionsdialog.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin

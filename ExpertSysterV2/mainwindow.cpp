@@ -16,6 +16,7 @@ MainWindow::MainWindow(QWidget *parent)
     ui->selectedSymptomsView->setModel(sel_model);
     ui->selectedSymptomsView->setEditTriggers(QAbstractItemView::NoEditTriggers);
 
+    ui->categoriesBox->clear();
     ui->categoriesBox->addItem(expSys->getCategoryBreak());
     ui->categoriesBox->addItems(expSys->getCategories());
 
@@ -31,6 +32,10 @@ MainWindow::MainWindow(QWidget *parent)
 
     connect(expSys, &ExpertSystem::systemSuccess, this, &MainWindow::successMessage);
     connect(expSys, &ExpertSystem::systemError, this, &MainWindow::errorMessage);
+
+    connect(expSys, &ExpertSystem::needsUpdate, this, &MainWindow::models_update);
+    connect(expSys, &ExpertSystem::resetCategory, this, &MainWindow::clear_category);
+    connect(ui->resetButton, &QPushButton::clicked, expSys, &ExpertSystem::init);
 }
 
 MainWindow::~MainWindow()
@@ -59,6 +64,8 @@ void MainWindow::select_category(const QString &category)
 void MainWindow::select_symptom()
 {
     QString item = get_modelItem(*(ui->symtomsView), *m_model);
+    if (item.isNull() || item.isEmpty())
+        return;
     ui->categoriesBox->setCurrentIndex(-1);
     //update add
     expSys->select(item);
@@ -68,6 +75,8 @@ void MainWindow::select_symptom()
 void MainWindow::remove_symptom()
 {
     QString item = get_modelItem(*(ui->selectedSymptomsView), *sel_model);
+    if (item.isNull() || item.isEmpty())
+        return;
     ui->categoriesBox->setCurrentIndex(-1);
     //update del
     expSys->remove(item);
@@ -79,6 +88,12 @@ void MainWindow::clear_selection()
     ui->categoriesBox->setCurrentIndex(-1);
     expSys->clear();
     models_update();
+}
+
+void MainWindow::clear_category()
+{
+    ui->categoriesBox->setCurrentIndex(0);
+    select_category(expSys->getCategoryBreak());
 }
 
 QString MainWindow::get_modelItem(const QListView &view, const QStringListModel &model)
@@ -107,8 +122,6 @@ void MainWindow::successMessage(const QStringList &missing, const QStringList &m
     result.append(medicines.at(last) + '.');
 
     QMessageBox::information(this, "System success", result);
-
-    clear_selection();
 }
 
 void MainWindow::errorMessage(const QString &error)
