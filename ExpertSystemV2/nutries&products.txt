@@ -1,0 +1,40 @@
+Vitamin D: fish, eggs, mushrooms, ghee, milk
+Vitamin B12: beef liver, clams, cereals, trout, nutritional yeast
+Iron: spinach, red meat, lentils, tofu, dark chocolate
+Magnesium: almonds, spinach, pumpkin seeds, black beans, dark chocolate
+Vitamin C: oranges, strawberries, bell peppers, kiwi, broccoli
+Vitamin A: sweet potatoes, carrots, spinach, cantaloupe, kale
+Zinc: oysters, beef, pumpkin seeds, chickpeas, cashews
+Omega-3 fatty acids: salmon, tuna, mackerel, flaxseeds, chia seeds, walnuts, hemp seeds
+Calcium: milk, yogurt, cheese, broccoli, kale, almonds, sardines
+Vitamin E: almonds, sunflower seeds, spinach, avocado, wheat germ
+Vitamin K: kale, spinach, broccoli, Brussels sprouts, cabbage, parsley
+Folate: lentils, asparagus, broccoli, avocado, grains
+Vitamin B6: chickpeas, salmon, bananas, spinach, chicken breast
+Iodine: seaweed, iodized salt, shrimp, eggs
+Vitamin B1 (Thiamine): pork, peas, enriched grains, sunflower seeds, black beans
+Vitamin B2 (Riboflavin): almonds, yogurt, mushrooms, spinach, eggs
+Vitamin B3 (Niacin): poultry, peanuts, mushrooms, green peas, tuna
+Vitamin B5 (Pantothenic Acid): chicken liver, sunflower seeds, avocado, mushrooms, salmon
+Vitamin B7 (Biotin): eggs, almonds, sweet potatoes, salmon, yeast
+Vitamin B9 (Folic Acid): spinach, kale, lettuce, asparagus, citrus fruits, beans, grains
+Vitamin B11 (Salicylic Acid): white willow bark extract, aspirin (medicinal)
+Vitamin B13 (Orotic Acid): whey protein, beer (medicinal)
+Vitamin B15 (Pangamic Acid): apricot kernels, brewer's yeast (medicinal)
+Vitamin B17 (Amygdalin): apricot kernels, bitter almonds (medicinal)
+Vitamin B21 (Pteroylmonoglutamic Acid): spinach, kale, lettuce, asparagus, citrus fruits, beans, grains
+Vitamin B22 (Pyridoxine): chickpeas, salmon, bananas, spinach, chicken breast
+Vitamin B24 (Cyanocobalamin): beef liver, clams, cereals, trout, nutritional yeast
+Vitamin B30 (Inositol): citrus fruits, beans, whole grains, nuts, seeds
+Vitamin B50 (Calcium Pantothenate): chicken liver, sunflower seeds, avocado, mushrooms, salmon
+Vitamin B100 (Choline): eggs, liver, salmon, Brussels sprouts, peanuts
+Vitamin F (Essential Fatty Acids): salmon, tuna, mackerel, flaxseeds, chia seeds, walnuts, hemp seeds
+Vitamin G (Glutathione): avocado, asparagus, broccoli, spinach, garlic
+Vitamin H (Biotin): eggs, almonds, sweet potatoes, salmon, yeast
+Vitamin I (Bioflavonoids): citrus fruits, berries, green tea, dark chocolate, red wine (medicinal)
+Vitamin J (Amino Acids): meat, poultry, fish, eggs
+Vitamin L (Anthocyanins): blueberries, strawberries, raspberries, red grapes, eggplant, red cabbage, cherries
+Vitamin M (Folic Acid): spinach, kale, lettuce, asparagus, citrus fruits, beans, grains
+Vitamin P (Bioflavonoids): citrus fruits, berries, green tea, dark chocolate, red wine (medicinal)
+Vitamin Q (Coenzyme Q10): heart, liver, sardines, mackerel, spinach, broccoli
+Vitamin T (Tocopherol): almonds, sunflower seeds, spinach, avocado, wheat germ

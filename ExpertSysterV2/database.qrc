@@ -1,8 +1,0 @@
-<RCC>
-    <qresource prefix="/database">
-        <file>nutries&amp;products.txt</file>
-        <file>nutries&amp;symptoms.txt</file>
-        <file>sortCategories.txt</file>
-        <file>nutries&amp;questions.txt</file>
-    </qresource>
-</RCC>
